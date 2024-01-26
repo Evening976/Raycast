@@ -1,8 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Raycast.DesktopClient
 {
@@ -41,9 +39,9 @@ namespace Raycast.DesktopClient
             }
 
             float t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
-            float u = - ((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
+            float u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
 
-            if(t > 0 && t < 1 && u > 0)
+            if (t > 0 && t < 1 && u > 0)
             {
                 Vector2 pt = new Vector2();
                 pt.X = x1 + (t * (x2 - x1));
