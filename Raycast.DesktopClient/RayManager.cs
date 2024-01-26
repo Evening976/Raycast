@@ -13,7 +13,6 @@ namespace Raycast.DesktopClient
         private readonly short _rayCount;
 
         private readonly List<Vector2> _uniquePoints;
-        private readonly List<float> _uniqueAngles;
 
         public RayManager(GraphicsDevice graphicsDevice, ContentManager content, short rayCount)
         {
@@ -26,7 +25,6 @@ namespace Raycast.DesktopClient
             this._rayCount = rayCount;
 
             _uniquePoints = new List<Vector2>();
-            _uniqueAngles = new List<float>();
         }
 
         public void Update(Vector2 mousePos, List<Wall> walls)
@@ -42,11 +40,6 @@ namespace Raycast.DesktopClient
 
         public void Draw(SpriteBatch spriteBatch, Vector2 mousePos)
         {
-            foreach (Ray ray in _rays)
-            {
-                ray.Draw(spriteBatch, _rayTex);
-            }
-
             foreach (Vector2 rH in _uniquePoints)
             {
                 spriteBatch.Draw(_rayHitTex, new Rectangle((int)rH.X - 8, (int)rH.Y - 8, 16, 16), Color.White);
@@ -84,14 +77,6 @@ namespace Raycast.DesktopClient
                 }
 
                 _uniquePoints.Add(closest);
-
-                for (int a = 0; a < _uniquePoints.Count; a++)
-                {
-                    float angle = (float)Math.Atan2(_uniquePoints[a].Y, _uniquePoints[a].X);
-                    _uniqueAngles.Add(angle - (1 / 100000));
-                    _uniqueAngles.Add(angle);
-                    _uniqueAngles.Add(angle + (1 / 100000));
-                }
             }
         }
 

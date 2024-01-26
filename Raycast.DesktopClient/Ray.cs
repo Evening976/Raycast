@@ -56,11 +56,8 @@ namespace Raycast.DesktopClient
 
         }
 
-        public void Draw(SpriteBatch spriteBatch, Texture2D _tex)
-        {
-            spriteBatch.Draw(_tex, new Rectangle((int)Position.X, (int)Position.Y, (int)Direction.Length() * 10, 2),
+        public void Draw(SpriteBatch spriteBatch, Texture2D tex) => spriteBatch.Draw(tex, new Rectangle((int)Position.X, (int)Position.Y, (int)Direction.Length() * 10, 2),
                 null, Color.White, (float)Math.Atan2(Direction.Y, Direction.X), Vector2.Zero, SpriteEffects.None, 0);
-        }
 
 
     }
