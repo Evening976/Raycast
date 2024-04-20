@@ -21,7 +21,7 @@ namespace Raycast.DesktopClient
             _rayTex.SetData(new Color[] { Color.Red });
 
 
-            _rayHitTex = content.Load<Texture2D>("circle-32");
+            _rayHitTex = content.Load<Texture2D>("circle");
             this._rayCount = rayCount;
 
             _uniquePoints = new List<Vector2>();
