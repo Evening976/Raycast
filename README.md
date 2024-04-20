@@ -10,4 +10,4 @@ Il utilise les équations paramétriques de droite pour tracer des rayons depuis
   - Exécuter le jeu : Lancez l'application (Program.cs).
   
 ## Exemple
-![Raycasting](/readme/preview.png)
+![Raycasting](/preview.png)
